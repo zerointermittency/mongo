@@ -1,0 +1,42 @@
+{
+  "name": "@zerointermittency/mongo",
+  "version": "1.0.0",
+  "main": "ZIMongo.js",
+  "scripts": {
+    "test": "nyc node --max_old_space_size=4096 test/index.js",
+    "test-nyan": "REPORTER=nyan node --max_old_space_size=4096 test/index.js",
+    "benchmark": "node --max_old_space_size=4096"
+  },
+  "keywords": [
+    "mongo",
+    "zerointermittency"
+  ],
+  "engines": ">=8.9.0",
+  "license": "MIT",
+  "homepage": "https://github.com/zerointermittency/mongo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zerointermittency/mongo"
+  },
+  "bugs": {
+    "url": "https://github.com/zerointermittency/mongo/issues"
+  },
+  "dependencies": {
+    "@zerointermittency/date": "^1.0.0",
+    "@zerointermittency/error": "^1.0.5",
+    "@zerointermittency/utils": "^1.0.2",
+    "mongoose": "^4.12.1",
+    "mongoose-unique-validator": "^1.0.6",
+    "mongoose-validator": "^1.3.2"
+  },
+  "devDependencies": {
+    "async": "^2.5.0",
+    "benchmark": "^2.1.4",
+    "chai": "^3.5.0",
+    "lodash": "^4.17.4",
+    "mocha": "^3.5.0",
+    "nyc": "^11.3.0",
+    "test-console": "^1.0.0",
+    "wrapper-path": "^2.0.0"
+  }
+}
