@@ -526,6 +526,8 @@ Para este punto recuerda seguir nuestra convención en [CONTRIBUTING.md][contrib
 Todos los cambios importantes son escritos aquí. El Formato esta basado en [Keep a Changelog](http://keepachangelog.com/es-ES/1.0.0/)
 
 ### [Unreleased]
+#### Fixed
+- Por defecto se deja la opción "useMongoClient = true" ya que se recomienda para poder utilizar MongoDB 3.6
 
 ### [1.0.0] - 2018-01-07
 #### Added

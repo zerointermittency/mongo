@@ -15,8 +15,12 @@ class ZIMongo {
             throw Error('zi-mongo: Required connections');
         for (let name in connections) {
             const opts = connections[name],
-                uri = (opts.uri.startsWith('mongodb://')) ? opts.uri : `mongodb://${opts.uri}`,
-                createConnection = () => self.mongoose.createConnection(uri, opts),
+                uri = (opts.uri.startsWith('mongodb://')) ? opts.uri : `mongodb://${opts.uri}`;
+            delete opts.uri;
+            /* istanbul ignore else */
+            if (opts.useMongoClient === undefined)
+                opts.useMongoClient = true;
+            const createConnection = () => self.mongoose.createConnection(uri, opts),
                 connection = createConnection();
             connection.on('disconnected', createConnection);
             connection.on('close', createConnection);
