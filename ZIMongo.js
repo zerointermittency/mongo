@@ -14,7 +14,7 @@ class ZIMongo {
         if (!connections || Object.keys(connections).length == 0)
             throw Error('zi-mongo: Required connections');
         for (let name in connections) {
-            const opts = connections[name],
+            const opts = Object.assign({}, connections[name]),
                 uri = (opts.uri.startsWith('mongodb://')) ? opts.uri : `mongodb://${opts.uri}`;
             delete opts.uri;
             /* istanbul ignore else */

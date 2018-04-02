@@ -528,6 +528,9 @@ Todos los cambios importantes son escritos aquí. El Formato esta basado en [Kee
 ### [Unreleased]
 #### Fixed
 - Por defecto se deja la opción "useMongoClient = true" ya que se recomienda para poder utilizar MongoDB 3.6
+- El objeto con la configuracion de la conexion se clona para evitar
+modificarlo a otro nivel
+
 
 ### [1.0.0] - 2018-01-07
 #### Added
