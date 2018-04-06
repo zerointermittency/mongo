@@ -526,6 +526,8 @@ Para este punto recuerda seguir nuestra convención en [CONTRIBUTING.md][contrib
 Todos los cambios importantes son escritos aquí. El Formato esta basado en [Keep a Changelog](http://keepachangelog.com/es-ES/1.0.0/)
 
 ### [Unreleased]
+
+### [1.0.2] - 2018-04-06
 #### Fixed
 - Al hacerse alguna desconexión manual esta vuelve a conectar por la reconexión por eventos que existía, debido a esto y que mongoose ya tiene implementada la reconexión automática se removió esta funcionalidad.
 

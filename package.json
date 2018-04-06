@@ -1,6 +1,6 @@
 {
   "name": "@zerointermittency/mongo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "ZIMongo.js",
   "scripts": {
     "test": "nyc node --max_old_space_size=4096 test/index.js",
