@@ -20,12 +20,7 @@ class ZIMongo {
             /* istanbul ignore else */
             if (opts.useMongoClient === undefined)
                 opts.useMongoClient = true;
-            const createConnection = () => self.mongoose.createConnection(uri, opts),
-                connection = createConnection();
-            connection.on('disconnected', createConnection);
-            connection.on('close', createConnection);
-            connection.on('error', createConnection);
-            self.connections[name] = connection;
+            self.connections[name] = self.mongoose.createConnection(uri, opts);
         }
     }
 
