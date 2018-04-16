@@ -515,6 +515,15 @@ Todos los cambios importantes son escritos aquí. El Formato esta basado en [Kee
 
 ### [Unreleased]
 
+### [1.0.2] - 2018-04-06
+#### Fixed
+- Al hacerse alguna desconexión manual esta vuelve a conectar por la reconexión por eventos que existía, debido a esto y que mongoose ya tiene implementada la reconexión automática se removió esta funcionalidad.
+
+### [1.0.1] - 2018-04-02
+#### Fixed
+- Por defecto se deja la opción "useMongoClient = true" ya que se recomienda para poder utilizar MongoDB 3.6
+- El objeto con la configuracion de la conexion se clona para evitar modificarlo a otro nivel
+
 ### [1.0.0] - 2018-01-07
 #### Added
 - Se agrego la opción de definir los indices al momento de crear el modelo

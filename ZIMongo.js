@@ -14,14 +14,13 @@ class ZIMongo {
         if (!connections || Object.keys(connections).length == 0)
             throw Error('zi-mongo: Required connections');
         for (let name in connections) {
-            const opts = connections[name],
-                uri = (opts.uri.startsWith('mongodb://')) ? opts.uri : `mongodb://${opts.uri}`,
-                createConnection = () => self.mongoose.createConnection(uri, opts),
-                connection = createConnection();
-            connection.on('disconnected', createConnection);
-            connection.on('close', createConnection);
-            connection.on('error', createConnection);
-            self.connections[name] = connection;
+            const opts = Object.assign({}, connections[name]),
+                uri = (opts.uri.startsWith('mongodb://')) ? opts.uri : `mongodb://${opts.uri}`;
+            delete opts.uri;
+            /* istanbul ignore else */
+            if (opts.useMongoClient === undefined)
+                opts.useMongoClient = true;
+            self.connections[name] = self.mongoose.createConnection(uri, opts);
         }
     }
 
