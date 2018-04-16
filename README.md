@@ -4,25 +4,17 @@ Este modulo es el encargado de proporcionar el conector para trabajar con la bas
 
 ## Instalación
 
-Agregar en **package.json** dentro del atributo **dependencies**:
-
 ```bash
 yarn add @zerointermittency/mongo
 # npm i --save @zerointermittency/mongo
 ```
 
-y luego ejecutar:
-
-```bash
-$ yarn
-```
-
 ## Errores estandarizados
 
-código | nombre | mensaje
----|---|---
-100|internal|Internal error
-101|validate|Validate error
+código | nombre   | mensaje
+-------|----------|--------------
+100    |internal  |Internal error
+101    |validate  |Validate error
 
 ## Api
 
@@ -517,10 +509,6 @@ forCheckslice x 1,594,394 ops/sec ±0.95% (86 runs sampled)
 Fastest is forCheckslice
 ```
 
-## Contribuir
-
-Para este punto recuerda seguir nuestra convención en [CONTRIBUTING.md][contributing]
-
 ## Changelog
 
 Todos los cambios importantes son escritos aquí. El Formato esta basado en [Keep a Changelog](http://keepachangelog.com/es-ES/1.0.0/)
@@ -541,8 +529,6 @@ Todos los cambios importantes son escritos aquí. El Formato esta basado en [Kee
 #### Security
 - Al crear y actualizar un documento no se deja modificar los atributos reservados (__v, _createDate, _updateDate, _deleteDate, _deleted)
 
-[contributing]: https://bitbucket.org/smartbox_way/njs/src/master/CONTRIBUTING.md
-[dependency-versions]: https://yarnpkg.com/en/docs/dependency-versions#toc-semantic-versioning
 [mongoose]: http://mongoosejs.com/
 [mongoose-middleware]: http://mongoosejs.com/docs/middleware.html
 [mongoose-schema]: http://mongoosejs.com/docs/guide.html
