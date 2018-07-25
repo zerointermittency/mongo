@@ -10,10 +10,6 @@ const object = {
     ObjectId = {
         isValid: require('mongoose').Types.ObjectId.isValid,
     },
-    privateAttrs = [
-        '__v', '_model', '_createDate', '_updateDate',
-        '_deleteDate', '_deleted',
-    ],
     types = {
         patch: (doc, updateDoc) => {
             const fn = (attr, prop) => {
@@ -34,7 +30,7 @@ const object = {
             if (Array.isArray(updateDoc['$unset']))
                 for (let i = updateDoc['$unset'].length - 1; i >= 0; i--) {
                     const prop = updateDoc['$unset'][i];
-                    if (privateAttrs.indexOf(prop) !== -1) continue;
+                    if (prop.startsWith('_')) continue;
                     doc.set(prop, undefined);
                     doc.markModified(prop);
                 }
@@ -46,14 +42,14 @@ const object = {
             for (let i = keys.length - 1; i >= 0; i--) {
                 const key = keys[i],
                     index = docKeys.indexOf(key);
-                if (key.startsWith('_id')) continue;
+                if (key === '_id') continue;
                 doc.set(key, updateDoc[key]);
                 doc.markModified(key);
                 if (index !== -1) docKeys.splice(index, 1);
             }
             for (let i = docKeys.length - 1; i >= 0; i--) {
                 const key = docKeys[i];
-                if (privateAttrs.indexOf(key) !== -1) continue;
+                if (key.startsWith('_')) continue;
                 doc.set(key, undefined);
                 doc.markModified(key);
             }

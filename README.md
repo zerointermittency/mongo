@@ -514,6 +514,7 @@ Fastest is forCheckslice
 Todos los cambios importantes son escritos aquí. El Formato esta basado en [Keep a Changelog](http://keepachangelog.com/es-ES/1.0.0/)
 
 ### [Unreleased]
+- Todas las propiedades que comienzan con "_" son tomadas como privadas y serán ignoradas
 
 ### [1.0.2] - 2018-04-06
 #### Fixed
@@ -522,7 +523,7 @@ Todos los cambios importantes son escritos aquí. El Formato esta basado en [Kee
 ### [1.0.1] - 2018-04-02
 #### Fixed
 - Por defecto se deja la opción "useMongoClient = true" ya que se recomienda para poder utilizar MongoDB 3.6
-- El objeto con la configuracion de la conexion se clona para evitar modificarlo a otro nivel
+- El objeto con la configuración de la conexión se clona para evitar modificarlo a otro nivel
 
 ### [1.0.0] - 2018-01-07
 #### Added

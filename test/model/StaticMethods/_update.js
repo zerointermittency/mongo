@@ -64,11 +64,7 @@ module.exports = () => {
                     return Promise.resolve();
                 })
                 .then(() => done())
-                // .catch(done);
-                .catch((err) => {
-                    console.log('#err', require('util').inspect(err, 0, 10, 1));
-                    done();
-                });
+                .catch(done);
         });
         it('patch: with errors', (done) => {
             Test._create({name: 't1', foo: 'foo'})
@@ -116,8 +112,10 @@ module.exports = () => {
                 .catch(done);
         });
         it('put', (done) => {
+            let originalDoc;
             Test._create({name: 't1', foo: 'foo', number: 1})
                 .then((doc) => {
+                    originalDoc = doc;
                     // console.log(Object.keys(doc));
                     _expect(doc.name).to.be.equal('t1');
                     _expect(doc.foo).to.be.equal('foo');
@@ -131,6 +129,7 @@ module.exports = () => {
                     // console.log(doc.constructor.name)
                     // console.log(typeof doc.name)
                     // console.log(typeof doc.foo)
+                    _expect(doc._id.toString()).to.be.equal(originalDoc._id.toString());
                     _expect(doc.name).to.be.undefined;
                     _expect(doc.get('number')).to.be.equal(2);
                     _expect(doc.get('foo')).to.be.undefined;
