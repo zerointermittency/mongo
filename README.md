@@ -514,6 +514,8 @@ Fastest is forCheckslice
 Todos los cambios importantes son escritos aquí. El Formato esta basado en [Keep a Changelog](http://keepachangelog.com/es-ES/1.0.0/)
 
 ### [Unreleased]
+
+### [1.0.3] - 2018-07-25
 - Todas las propiedades que comienzan con "_" son tomadas como privadas y serán ignoradas
 
 ### [1.0.2] - 2018-04-06
